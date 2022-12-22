@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataAccess\NewFolder1\**" />
+    <Compile Remove="DataAccess\NewFolder2\**" />
+    <Compile Remove="DataAccess\NewFolder3\**" />
+    <Compile Remove="DataAccess\NewFolder\**" />
+    <EmbeddedResource Remove="DataAccess\NewFolder1\**" />
+    <EmbeddedResource Remove="DataAccess\NewFolder2\**" />
+    <EmbeddedResource Remove="DataAccess\NewFolder3\**" />
+    <EmbeddedResource Remove="DataAccess\NewFolder\**" />
+    <None Remove="DataAccess\NewFolder1\**" />
+    <None Remove="DataAccess\NewFolder2\**" />
+    <None Remove="DataAccess\NewFolder3\**" />
+    <None Remove="DataAccess\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.11" />
+  </ItemGroup>
+
+</Project>
