@@ -36,7 +36,7 @@ namespace Busıness.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 23)
             {
                 return  new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
@@ -61,10 +61,10 @@ namespace Busıness.Concrete
 
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
-            //if (DateTime.Now.Hour == 20)
-            //{
-            //    return new ErrorDataResult<List<ProductDetailDto>>(Messages.MaintenanceTime);
-            //}
+            //if (DateTime.Now.Hour == 21)
+           // {
+              //return new ErrorDataResult<List<ProductDetailDto>>(Messages.MaintenanceTime);
+           //}
             return new SuccessDataResult<List<ProductDetailDto>> (_productdal.GetProductDetails()) ;
         }
     }
