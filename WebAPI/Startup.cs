@@ -32,8 +32,8 @@ namespace WebAPI
         {
 
             services.AddControllers();
-            services.AddSingleton<IProductService,ProductManager>();//en basta yaptıgımız newleme olmasın dıye.
-            services.AddSingleton<IProductDal, IEfProductDal>();
+          // services.AddSingleton<IProductService,ProductManager>();//en basta yaptıgımız newleme olmasın dıye.
+           // services.AddSingleton<IProductDal, IEfProductDal>();
 
             services.AddSwaggerGen(c =>
             {
