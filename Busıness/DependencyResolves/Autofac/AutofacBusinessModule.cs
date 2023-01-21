@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Busıness.Abstract;
+using Busıness.CCS;
 using Busıness.Concrete;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
@@ -21,6 +22,10 @@ namespace Busıness.DependencyResolves.Autofac
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance(); //startuptakinin karşılığı
          
             builder.RegisterType<IEfProductDal>().As<IProductDal>().SingleInstance();
+            builder.RegisterType<CategoryManager>().As<CategoryManager>().SingleInstance();
+
+            builder.RegisterType<IEfCategoryDal>().As<ICategoryDal>().SingleInstance();
+
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
