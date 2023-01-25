@@ -1,4 +1,5 @@
 ﻿using Busıness.Abstract;
+using Busıness.BusinessAspects.Autofac;
 using Busıness.CCS;
 using Busıness.Constants;
 using Busıness.ValidationRules.FluentValidation;
@@ -33,7 +34,7 @@ namespace Busıness.Concrete
            
 
         }
-
+        [SecuredOperation ("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
