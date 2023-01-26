@@ -1,5 +1,8 @@
 ﻿using Busıness.Abstract;
 using Busıness.Concrete;
+using Core.DependencyResolves;
+using Core.Extensions;
+using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
 using DataAccess.Abstract;
@@ -39,7 +42,7 @@ namespace WebAPI
             services.AddControllers();
             // services.AddSingleton<IProductService,ProductManager>();//en basta yaptıgımız newleme olmasın dıye.
             // services.AddSingleton<IProductDal, IEfProductDal>();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+           
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -56,6 +59,7 @@ namespace WebAPI
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
+            services.AddDependencyResolvers(new ICoreModule[] {new CoreModule() });
 
 
 
